@@ -23,6 +23,11 @@ const AdminSchema = mongoose.Schema({
         required: [true, 'The admin name is mandatory']
     },
 
+    role: {
+        type: String,
+        required: [true, 'The admin role is mandatory']
+    },
+    
     state: {
         type: Boolean,
         default: true
