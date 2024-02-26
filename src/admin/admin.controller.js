@@ -3,8 +3,8 @@ import bcrypt  from 'bcrypt';
 import Admin from './admin.model.js';
 
 export const adminPost = async(req, res) => {
-    const { role, ...resto} = req.body;
-    const admin = new Admin({ role, resto});
+    const { role, password, username, email, name} = req.body;
+    const admin = new Admin({ role, password, username, email, name});
 
     const salt = bcrypt.genSaltSync();
     admin.password = bcrypt.hashSync(password, salt);
