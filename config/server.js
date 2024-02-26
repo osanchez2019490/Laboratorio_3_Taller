@@ -5,12 +5,14 @@ import helmet from 'helmet';
 import cors from 'cors';
 import { dbConnection } from './config.js';
 import morgan from 'morgan';
+import adminRoutes from '../src/admin/admin.routes.js';
+
 
 class Server{
     constructor(){
         this.app = express();
         this.port = process.env.PORT;
-
+        this.adminPath = '/coperex/v1/register'
 
         this.conectarDB();
         this.middlware();
@@ -30,7 +32,7 @@ class Server{
     }
 
     routes(){
-    
+        this.app.use(this.adminPath, adminRoutes);
     }
 
     listen(){
