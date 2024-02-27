@@ -6,13 +6,14 @@ import cors from 'cors';
 import { dbConnection } from './config.js';
 import morgan from 'morgan';
 import adminRoutes from '../src/admin/admin.routes.js';
-
+import authRoute from '../src/auth/auth.routes.js';
 
 class Server{
     constructor(){
         this.app = express();
         this.port = process.env.PORT;
-        this.adminPath = '/coperex/v1/register'
+        this.adminPath = '/coperex/v1/register';
+        this.authPath = '/coperex/v1/auth';
 
         this.conectarDB();
         this.middlware();
@@ -33,6 +34,7 @@ class Server{
 
     routes(){
         this.app.use(this.adminPath, adminRoutes);
+        this.app.use(this.authPath, authRoute);
     }
 
     listen(){
