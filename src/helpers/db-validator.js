@@ -1,11 +1,5 @@
 import Admin from '../admin/admin.model.js';
 
-export const validRol = async (role = ' ') => {
-    const validRol = await Admin.findOne({role});
-    if(!validRol){
-        throw new Error(`The role ${role} does not exist in the database `)
-    }
-}
 
 export const existingEmail = async(email = '') => {
     const existingEmeail = await Admin.findOne({email});
