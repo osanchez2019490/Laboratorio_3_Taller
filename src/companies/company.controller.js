@@ -28,3 +28,12 @@ export const companyPut = async (req, res = response) =>  {
         companyLast
     })
 }
+
+export const getCompanyById = async (req, res) => {
+    const {id} = req.params;
+    const company = await Company.findOne({_id: id});
+
+    res.status(200).json({
+        company
+    })
+}
