@@ -13,3 +13,18 @@ export const companyPost = async (req = request, res= response) => {
     })
 
 }
+
+export const companyPut = async (req, res = response) =>  {
+    const { id } = req.params;
+    const { _id, ...resto} = req.body;
+
+    const companyLast = await Company.findByIdAndUpdate(id, resto);
+
+    const company = req.body;
+
+    res.status(200).json({
+        msg: 'The company has been updated',
+        company,
+        companyLast
+    })
+}

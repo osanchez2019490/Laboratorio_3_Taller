@@ -23,7 +23,7 @@ export const existingUsername = async( username = '') => {
 }
 
 export const existingById = async(id = '') => {
-    const existingById = await Admin.findOne({id});
+    const existingById = await Company.findOne({id});
     if(existingById) {
         throw new Error(`The id ${id} does  exist in the database`);
     }
