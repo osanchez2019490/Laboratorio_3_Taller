@@ -1,0 +1,76 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Company - Crud",
+    "dateExported": "2024-02-28T23:25:25.271Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "b1889bb8-a889-417f-8686-81e557759731",
+            "colId": "d1e7d975-3089-4d1e-84f1-d97c5fd42a4b",
+            "containerId": "",
+            "name": "post_Company",
+            "url": "http://localhost:8080/coperex/v1/company",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-28T22:49:54.335Z",
+            "modified": "2024-02-28T22:52:33.905Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRlNjFlMjU0NTdjYjViZTQyNTU3YmYiLCJpYXQiOjE3MDkxNjA1NzMsImV4cCI6MTcwOTE2Nzc3M30.q36bw4RThZmi2qUnN3ZmwuM8g8abwJfMtXtwI4VG7Fg"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nameCompany\": \"Lego\",\n  \"impactLevel\": \"Global\",\n  \"yearsOfExperience\": \"19 years\",\n  \"category\": \"Childish\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "f5ade497-50c4-44c1-a4c8-649882988b8f",
+            "colId": "d1e7d975-3089-4d1e-84f1-d97c5fd42a4b",
+            "containerId": "",
+            "name": "put_Company",
+            "url": "http://localhost:8080/coperex/v1/company/65dfb931de6edd3df578800b",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-02-28T23:12:09.899Z",
+            "modified": "2024-02-28T23:13:16.845Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRlNjFlMjU0NTdjYjViZTQyNTU3YmYiLCJpYXQiOjE3MDkxNjA1NzMsImV4cCI6MTcwOTE2Nzc3M30.q36bw4RThZmi2qUnN3ZmwuM8g8abwJfMtXtwI4VG7Fg"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nameCompany\": \"Nego\",\n  \"impactLevel\": \"Global\",\n  \"yearsOfExperience\": \"19 years\",\n  \"category\": \"Childish\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "9c7d33e6-abe7-48c8-92bd-0a5cd6dbcdd3",
+            "colId": "d1e7d975-3089-4d1e-84f1-d97c5fd42a4b",
+            "containerId": "",
+            "name": "getById_Company",
+            "url": "http://localhost:8080/coperex/v1/company/65dfb931de6edd3df578800b",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-02-28T23:22:38.028Z",
+            "modified": "2024-02-28T23:23:03.677Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRlNjFlMjU0NTdjYjViZTQyNTU3YmYiLCJpYXQiOjE3MDkxNjA1NzMsImV4cCI6MTcwOTE2Nzc3M30.q36bw4RThZmi2qUnN3ZmwuM8g8abwJfMtXtwI4VG7Fg"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
