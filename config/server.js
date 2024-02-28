@@ -7,6 +7,7 @@ import { dbConnection } from './config.js';
 import morgan from 'morgan';
 import adminRoutes from '../src/admin/admin.routes.js';
 import authRoute from '../src/auth/auth.routes.js';
+import companyRoutes from '../src/companies/company.routes.js';
 
 class Server{
     constructor(){
@@ -14,6 +15,7 @@ class Server{
         this.port = process.env.PORT;
         this.adminPath = '/coperex/v1/register';
         this.authPath = '/coperex/v1/auth';
+        this.companyPath = '/coperex/v1/company';
 
         this.conectarDB();
         this.middlware();
@@ -35,6 +37,7 @@ class Server{
     routes(){
         this.app.use(this.adminPath, adminRoutes);
         this.app.use(this.authPath, authRoute);
+        this.app.use(this.companyPath, companyRoutes);
     }
 
     listen(){
