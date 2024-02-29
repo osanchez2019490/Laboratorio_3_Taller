@@ -4,7 +4,8 @@ import {
     companyPost, 
     companyPut, 
     getCompany, 
-    getCompanyById } from "./company.controller.js";
+    getCompanyById, 
+    getReport} from "./company.controller.js";
 
 import { existingById, existingNameCompany } from "../helpers/db-validator.js";
 import { validateJWT } from "../middlewares/validateJwt.js";
@@ -12,6 +13,7 @@ import { validationFields } from '../middlewares/validateFields.js';
 
 const router = Router();
 
+router.get("/report", [validateJWT], getReport)
 router.get("/", [validateJWT], getCompany)
 router.get(
     "/:id",

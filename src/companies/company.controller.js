@@ -1,5 +1,6 @@
 import { response, request} from  'express';
 import Company  from './company.model.js';
+import excel from 'exceljs';
 
 export const companyPost = async (req = request, res= response) => {
     
@@ -88,4 +89,34 @@ export const getCompany = async (req, res) => {
         total,
         companys
     });
+}
+
+export const getReport = async (req, res) => {
+    try{
+    const company = await Company.find({ state: true }).lean();
+
+    const workbook = new excel.Workbook();
+    const worksheet = workbook.addWorksheet('Company');
+
+    worksheet.columns = [
+        { header: 'Company Name', key: 'nameCompany', width: 30},
+        { header: 'Impact level', key: 'impactLevel', width: 20},
+        { header: 'Years of experience', key: 'yearsOfExperience', width: 20},
+        { header: 'Category', key: 'category', width: 20}
+    ];
+
+    company.forEach(company => {
+        worksheet.addRow(company);
+    });
+
+    const stream = await workbook.xlsx.writeBuffer();
+
+    res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    res.setHeader('Content-Disposition', 'attachment; filename="company_report.xlsx"');
+
+    res.send(stream);
+    }catch(e){
+        console.error('Error al generar el reporte Excel:', error);
+        res.status(500).json({ message: 'Error al generar el reporte Excel.' });
+    }
 }
