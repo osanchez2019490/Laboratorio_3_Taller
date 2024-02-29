@@ -1,6 +1,10 @@
 import { Router } from "express";
 import { check } from "express-validator";
-import { companyPost, companyPut, getCompanyById } from "./company.controller.js";
+import { 
+    companyPost, 
+    companyPut, 
+    getCompany, 
+    getCompanyById } from "./company.controller.js";
 
 import { existingById, existingNameCompany } from "../helpers/db-validator.js";
 import { validateJWT } from "../middlewares/validateJwt.js";
@@ -8,6 +12,7 @@ import { validationFields } from '../middlewares/validateFields.js';
 
 const router = Router();
 
+router.get("/", [validateJWT], getCompany)
 router.get(
     "/:id",
     [

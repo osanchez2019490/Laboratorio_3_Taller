@@ -37,3 +37,55 @@ export const getCompanyById = async (req, res) => {
         company
     })
 }
+
+export const getCompany = async (req, res) => {
+    const { limit , from, yearsOfExperience , category, order } = req.query;
+    const query = { state: true};
+
+    if (yearsOfExperience !== undefined) {
+        query.yearsOfExperience = yearsOfExperience;
+    }
+
+    if(category) {
+        query.category = category;
+
+    }
+
+    let sortCriteria = {};
+    if(order) {
+        switch(order) {
+            case 'az':
+                sortCriteria = { nameCompany: 1 };
+                break;
+            case 'za':
+                sortCriteria = { nameCompany: -1};
+                break;
+            case 'experienciaAsc':
+                sortCriteria = { yearsOfExperience: 1};
+                break;
+            case 'experienciaDesc':
+                sortCriteria = { yearsOfExperience: -1};
+                break;
+            case 'categoryAsc':
+                sortCriteria = { category: 1};
+                break;
+            case 'categoryDesc': 
+                sortCriteria = { category:-1};
+                break;
+        }
+    }
+
+    const [ total, companys] = await Promise.all([
+        Company.countDocuments(query),
+        Company.find(query)
+            .skip(Number(from))
+            .limit(Number(limit))
+            .sort(sortCriteria)
+    ]);
+    
+
+    res.status(200).json({
+        total,
+        companys
+    });
+}
