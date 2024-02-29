@@ -1,44 +1,44 @@
 {
     "client": "Thunder Client",
     "collectionName": "Company - Crud",
-    "dateExported": "2024-02-28T23:25:25.271Z",
+    "dateExported": "2024-02-29T04:29:51.477Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "b1889bb8-a889-417f-8686-81e557759731",
-            "colId": "d1e7d975-3089-4d1e-84f1-d97c5fd42a4b",
+            "_id": "15ade4aa-e740-4522-bb2a-bcc5e4de623b",
+            "colId": "54e721f6-9df2-4950-a022-1e977af6f8ec",
             "containerId": "",
             "name": "post_Company",
             "url": "http://localhost:8080/coperex/v1/company",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-02-28T22:49:54.335Z",
-            "modified": "2024-02-28T22:52:33.905Z",
+            "created": "2024-02-29T02:50:48.606Z",
+            "modified": "2024-02-29T04:25:22.733Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRlNjFlMjU0NTdjYjViZTQyNTU3YmYiLCJpYXQiOjE3MDkxNjA1NzMsImV4cCI6MTcwOTE2Nzc3M30.q36bw4RThZmi2qUnN3ZmwuM8g8abwJfMtXtwI4VG7Fg"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRmZmE4ZmQ0OGI0NzNlMzg3ODI3NjkiLCJpYXQiOjE3MDkxODA3MTUsImV4cCI6MTcwOTE4NzkxNX0.9wVaDd4c4721-gdVgbFVKZn1OBqPMN3WlPZM1PMKvuQ"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nameCompany\": \"Lego\",\n  \"impactLevel\": \"Global\",\n  \"yearsOfExperience\": \"19 years\",\n  \"category\": \"Childish\"\n}",
+                "raw": "{\n  \"nameCompany\": \"LOL1\",\n  \"impactLevel\": \"Global\",\n  \"yearsOfExperience\": \"29 years\",\n  \"category\": \"XD\"\n}",
                 "form": []
             },
             "tests": []
         },
         {
-            "_id": "f5ade497-50c4-44c1-a4c8-649882988b8f",
-            "colId": "d1e7d975-3089-4d1e-84f1-d97c5fd42a4b",
+            "_id": "8b1974e3-ef0e-4719-b744-db89a1b55bd0",
+            "colId": "54e721f6-9df2-4950-a022-1e977af6f8ec",
             "containerId": "",
             "name": "put_Company",
             "url": "http://localhost:8080/coperex/v1/company/65dfb931de6edd3df578800b",
             "method": "PUT",
             "sortNum": 30000,
-            "created": "2024-02-28T23:12:09.899Z",
-            "modified": "2024-02-28T23:13:16.845Z",
+            "created": "2024-02-29T02:50:48.607Z",
+            "modified": "2024-02-29T02:50:48.607Z",
             "headers": [
                 {
                     "name": "x-token",
@@ -54,19 +54,63 @@
             "tests": []
         },
         {
-            "_id": "9c7d33e6-abe7-48c8-92bd-0a5cd6dbcdd3",
-            "colId": "d1e7d975-3089-4d1e-84f1-d97c5fd42a4b",
+            "_id": "4daa6cba-a064-4fbf-938b-afc47e6c964d",
+            "colId": "54e721f6-9df2-4950-a022-1e977af6f8ec",
             "containerId": "",
             "name": "getById_Company",
             "url": "http://localhost:8080/coperex/v1/company/65dfb931de6edd3df578800b",
             "method": "GET",
             "sortNum": 40000,
-            "created": "2024-02-28T23:22:38.028Z",
-            "modified": "2024-02-28T23:23:03.677Z",
+            "created": "2024-02-29T02:50:48.608Z",
+            "modified": "2024-02-29T02:50:48.608Z",
             "headers": [
                 {
                     "name": "x-token",
                     "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRlNjFlMjU0NTdjYjViZTQyNTU3YmYiLCJpYXQiOjE3MDkxNjA1NzMsImV4cCI6MTcwOTE2Nzc3M30.q36bw4RThZmi2qUnN3ZmwuM8g8abwJfMtXtwI4VG7Fg"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "5ab9e95a-1f04-46b7-b8ac-f9ec4c243eb7",
+            "colId": "54e721f6-9df2-4950-a022-1e977af6f8ec",
+            "containerId": "",
+            "name": "get_Company",
+            "url": "http://localhost:8080/coperex/v1/company?order=categoryAsc",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-02-29T03:28:37.131Z",
+            "modified": "2024-02-29T03:45:39.988Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRmZmE4ZmQ0OGI0NzNlMzg3ODI3NjkiLCJpYXQiOjE3MDkxNzc0OTEsImV4cCI6MTcwOTE4NDY5MX0.qlGdYn2F3BhZ31nrVjizw0ESlTQhYeR6ybtYuFruIHY"
+                }
+            ],
+            "params": [
+                {
+                    "name": "order",
+                    "value": "categoryAsc",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "3fec835b-8cb4-4081-8e22-3b4ce9e2ce79",
+            "colId": "54e721f6-9df2-4950-a022-1e977af6f8ec",
+            "containerId": "",
+            "name": "get_report",
+            "url": "http://localhost:8080/coperex/v1/company/report",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-02-29T04:03:33.533Z",
+            "modified": "2024-02-29T04:03:59.792Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRmZmE4ZmQ0OGI0NzNlMzg3ODI3NjkiLCJpYXQiOjE3MDkxNzk0MjYsImV4cCI6MTcwOTE4NjYyNn0.An_LOCUTQQ_1XsTvmBtqgx-eUOUi04VEvNDG9xZmpe0"
                 }
             ],
             "params": [],
