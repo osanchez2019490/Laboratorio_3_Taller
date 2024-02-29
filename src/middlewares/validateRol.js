@@ -11,5 +11,7 @@ export const validateRole = (...roles) => {
                 msg: `Unauthorized user, has a role ${req.usuario.role}, authorized roles are ${ roles }`
             })
         }
+
+        next();
     }
 }

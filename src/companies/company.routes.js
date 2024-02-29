@@ -10,15 +10,17 @@ import {
 import { existingById, existingNameCompany } from "../helpers/db-validator.js";
 import { validateJWT } from "../middlewares/validateJwt.js";
 import { validationFields } from '../middlewares/validateFields.js';
+import { validateRole } from "../middlewares/validateRol.js";
 
 const router = Router();
 
-router.get("/report", [validateJWT], getReport)
-router.get("/", [validateJWT], getCompany)
+router.get("/report", [validateJWT, validateRole('ADMIN_ROLE')], getReport)
+router.get("/", [validateJWT, validateRole('ADMIN_ROLE')], getCompany)
 router.get(
     "/:id",
     [
         validateJWT,
+        validateRole('ADMIN_ROLE'),
         check("id", "it is not id validit").isMongoId(),
         check("id").custom(existingById),
         validationFields
@@ -29,6 +31,7 @@ router.post(
     "/",
     [
         validateJWT,
+        validateRole('ADMIN_ROLE'),
         check("nameCompany", "The name is mandatory").not().isEmpty(),
         check("nameCompany").custom(existingNameCompany),
         check("impactLevel", "The level is mandatory").not().isEmpty(),
@@ -42,6 +45,7 @@ router.put(
     "/:id",
     [
         validateJWT,
+        validateRole('ADMIN_ROLE'),
         check("id", "it is not id validit").isMongoId(),
         check("id").custom(existingById),
         validationFields
